@@ -1,9 +1,9 @@
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/Assets/AssetStoreTools*
+RealDamCiPaczkeVRSymulator/[Ll]ibrary/
+RealDamCiPaczkeVRSymulator/[Tt]emp/
+RealDamCiPaczkeVRSymulator/[Oo]bj/
+RealDamCiPaczkeVRSymulator/[Bb]uild/
+RealDamCiPaczkeVRSymulator/[Bb]uilds/
+RealDamCiPaczkeVRSymulator/Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
 /.vs/
