@@ -19,21 +19,22 @@ public class LaserPointer : MonoBehaviour {
     
     private Vector3 _hitPoint;
 
-    public Transform cameraRigTransform;
+    public Transform CameraRigTransform;
     
-    public GameObject teleportReticlePrefab;
+    public GameObject TeleportReticlePrefab;
    
-    private GameObject reticle;
+    private GameObject _reticle;
    
-    private Transform teleportReticleTransform;
+    private Transform _teleportReticleTransform;
   
-    public Transform headTransform;
+    public Transform HeadTransform;
   
-    public Vector3 teleportReticleOffset;
+    public Vector3 TeleportReticleOffset;
    
-    public LayerMask teleportMask;
+    public LayerMask TeleportMask;
    
-    private bool shouldTeleport;
+    private bool _shouldTeleport;
+
 
 
     void Awake()
@@ -46,9 +47,9 @@ public class LaserPointer : MonoBehaviour {
         _laser = Instantiate(LaserPrefab);
         _laserTransform = _laser.transform;
 
-        reticle = Instantiate(teleportReticlePrefab);
+        _reticle = Instantiate(TeleportReticlePrefab);
        
-        teleportReticleTransform = reticle.transform;
+        _teleportReticleTransform = _reticle.transform;
     }
     
     void Update () {
@@ -57,24 +58,24 @@ public class LaserPointer : MonoBehaviour {
             RaycastHit hit;
 
 
-            if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 100, teleportMask))
+            if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 100, TeleportMask))
             {
                 _hitPoint = hit.point;
                 ShowLaser(hit);
-                reticle.SetActive(true);
+                _reticle.SetActive(true);
                 
-                teleportReticleTransform.position = _hitPoint + teleportReticleOffset;
+                _teleportReticleTransform.position = _hitPoint + TeleportReticleOffset;
                
-                shouldTeleport = true;
+                _shouldTeleport = true;
             }
         }
         else
         {
             _laser.SetActive(false);
-            reticle.SetActive(false);
+            _reticle.SetActive(false);
         }
 
-        if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad) && shouldTeleport)
+        if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad) && _shouldTeleport)
         {
             Teleport();
         }
@@ -93,14 +94,14 @@ public class LaserPointer : MonoBehaviour {
     private void Teleport()
     {
        
-        shouldTeleport = false;
+        _shouldTeleport = false;
        
-        reticle.SetActive(false);
+        _reticle.SetActive(false);
        
-        Vector3 difference = cameraRigTransform.position - headTransform.position;
+        Vector3 difference = CameraRigTransform.position - HeadTransform.position;
        
         difference.y = 0;
         
-        cameraRigTransform.position = _hitPoint + difference;
+        CameraRigTransform.position = _hitPoint + difference;
     }
 }
