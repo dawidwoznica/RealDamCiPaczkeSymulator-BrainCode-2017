@@ -13,20 +13,28 @@ public class TntDetonate : MonoBehaviour
     public LayerMask CanBeDamagedMask;
     private AudioSource explosionSound;
 
-    void OnTriggerEnter(Collider other)
+
+    void OnCollisionEnter(Collider other)
     {
-        explosionSound = GetComponent<AudioSource>();
-
-        colls = Physics.OverlapSphere(transform.position, _areaOfEffect, CanBeDamagedMask);
-
-        for (int i = 0; i < colls.Length; i++)
+        if (other.gameObject.tag == "Customer")
         {
-            Destroy(colls[i].gameObject);
-        }
+            explosionSound = GetComponent<AudioSource>();
 
-        Instantiate(explosion, transform.position, transform.rotation);
-        explosionSound.Play();
-     
-        Destroy(explosion, 2f);
+            colls = Physics.OverlapSphere(transform.position, _areaOfEffect, CanBeDamagedMask);
+
+            for (int i = 0; i < colls.Length; i++)
+            {
+                Destroy(colls[i].gameObject);
+            }
+
+            Instantiate(explosion, transform.position, transform.rotation);
+            explosionSound.Play();
+
+            Destroy(explosion, 1f);
+        }
+        else
+        {
+            return; 
+        }
     }
 }
