@@ -14,9 +14,9 @@ public class TntDetonate : MonoBehaviour
     private AudioSource explosionSound;
 
 
-    void OnCollisionEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "Customer")
+        if (collision.gameObject.tag == "Customer")
         {
             explosionSound = GetComponent<AudioSource>();
 
