@@ -1,0 +1,134 @@
+fileFormatVersion: 2
+guid: 43f69a9ab0cfb294cb520937186aa4f6
+timeCreated: 1490406323
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Drzwi
+    100002: Environment
+    100004: Lada
+    100006: Paczka
+    100008: Regal
+    100010: RegalL
+    100012: RegalR
+    100014: Sklepik
+    100016: //RootNode
+    100018: Text
+    100020: Text_001
+    100022: Text_002
+    400000: Drzwi
+    400002: Environment
+    400004: Lada
+    400006: Paczka
+    400008: Regal
+    400010: RegalL
+    400012: RegalR
+    400014: Sklepik
+    400016: //RootNode
+    400018: Text
+    400020: Text_001
+    400022: Text_002
+    2300000: Drzwi
+    2300002: Environment
+    2300004: Lada
+    2300006: Paczka
+    2300008: Regal
+    2300010: RegalL
+    2300012: RegalR
+    2300014: Sklepik
+    2300016: Text
+    2300018: Text_001
+    2300020: Text_002
+    3300000: Drzwi
+    3300002: Environment
+    3300004: Lada
+    3300006: Paczka
+    3300008: Regal
+    3300010: RegalL
+    3300012: RegalR
+    3300014: Sklepik
+    3300016: Text
+    3300018: Text_001
+    3300020: Text_002
+    4300000: RegalR
+    4300002: Text_002
+    4300004: Text_001
+    4300006: Text
+    4300008: Environment
+    4300010: Drzwi
+    4300012: Paczka
+    4300014: Lada
+    4300016: RegalL
+    4300018: Regal
+    4300020: Sklepik
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
