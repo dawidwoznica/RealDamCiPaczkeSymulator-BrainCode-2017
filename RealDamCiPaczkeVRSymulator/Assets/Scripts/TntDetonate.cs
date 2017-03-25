@@ -12,12 +12,14 @@ public class TntDetonate : MonoBehaviour
     private Collider[] colls;
     public LayerMask CanBeDamagedMask;
     private AudioSource explosionSound;
+    public AudioClip destroySound;
+    private bool isDestroyed;
 
-
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision other)
     {
-        if (collision.gameObject.tag == "Customer")
+        if (other.gameObject.tag == "Customer" && !isDestroyed)
         {
+            isDestroyed = true;
             explosionSound = GetComponent<AudioSource>();
 
             colls = Physics.OverlapSphere(transform.position, _areaOfEffect, CanBeDamagedMask);
@@ -27,14 +29,19 @@ public class TntDetonate : MonoBehaviour
                 Destroy(colls[i].gameObject);
             }
 
-            Instantiate(explosion, transform.position, transform.rotation);
-            explosionSound.Play();
+            StartCoroutine(Die());
+            
+        }
+    }
 
-            Destroy(explosion, 1f);
-        }
-        else
-        {
-            return; 
-        }
+    public IEnumerator Die()
+    {
+        AudioSource.PlayClipAtPoint(destroySound, transform.position);
+        //explosionSound.Play();
+        Instantiate(explosion, transform.position, transform.rotation);
+        
+        yield return new WaitForSeconds(1.0f);
+        gameObject.SetActive(false);
+        GetComponent<Collider>().enabled = false;
     }
 }
