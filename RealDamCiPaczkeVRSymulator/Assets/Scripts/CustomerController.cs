@@ -13,13 +13,16 @@ public class CustomerController : MonoBehaviour
 
     private bool isPlaying = false;
 
+    private Animator animator;
+
+
 
 	void Awake ()
 	{
 	    point = GameObject.FindGameObjectWithTag("Point").transform;
 	    nav = GetComponent<NavMeshAgent>();
 	    hey = GetComponent<AudioSource>();
-        
+        animator = GetComponent<Animator>();
     }
 	
 	
@@ -36,7 +39,9 @@ public class CustomerController : MonoBehaviour
         {
             hey.Play();
             isPlaying = true;
+            animator.SetBool("IsOnThePlace", true);
         }
+        else { animator.SetBool("IsOnThePlace", false); }
     }
  
 }
