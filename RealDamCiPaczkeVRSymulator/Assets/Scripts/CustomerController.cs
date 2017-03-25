@@ -15,6 +15,8 @@ public class CustomerController : MonoBehaviour
 
     private Animator animator;
 
+    public ParticleSystem particleSystem;
+
 
 
 	void Awake ()
@@ -43,5 +45,4 @@ public class CustomerController : MonoBehaviour
         }
         else { animator.SetBool("IsOnThePlace", false); }
     }
- 
 }

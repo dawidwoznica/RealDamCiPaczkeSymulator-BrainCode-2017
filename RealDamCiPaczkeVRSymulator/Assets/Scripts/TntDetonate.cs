@@ -40,7 +40,7 @@ public class TntDetonate : MonoBehaviour
         //explosionSound.Play();
         Instantiate(explosion, transform.position, transform.rotation);
         
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.00001f);
         gameObject.SetActive(false);
         GetComponent<Collider>().enabled = false;
     }
